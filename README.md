@@ -153,7 +153,7 @@ backend             |     See sample queries: http://pris.ly/e/ts/graphql-typegr
 ```
 
 ### Alternativaly, you can run without docker
-- [Backend with mysql config](./backend/README.md)
+- [Backend with mysql config](./node-backend/README.md)
 - [Front-end](./node-front-end-web/README.md)
 
 ### IMPORTANT!!!

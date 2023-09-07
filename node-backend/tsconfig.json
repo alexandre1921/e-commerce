@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "target": "es2018",
+      "sourceMap": true,
+      "outDir": "build",
+      "sourceRoot": "src",
+      "rootDir": "./src",
+      "baseUrl": "./src",
+      "strict": true,
+      "lib": ["esnext"],
+      "esModuleInterop": true,
+      "module": "commonjs",
+      "noImplicitReturns": true,
+      "noUnusedLocals": true,
+      "skipLibCheck": true,
+      "paths": {
+        "models/*": ["./models/*"],
+        "resolvers/*": ["./resolvers/*"],
+        "repositories/*": ["./repositories/*"],
+        "utils/*": ["./utils/*"]
+      },
+    },
+    "compileOnSave": true,
+    "include": [
+      "src"
+    ]
+}

@@ -1,0 +1,35 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+generator typegraphql {
+  provider = "typegraphql-prisma"
+  output   = "../src/generated/type-graphql"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  code        BigInt  @id
+  name        String  @db.VarChar(100)
+  costPrice   Decimal @db.Decimal(9,2) @map("cost_price")
+  salesPrice  Decimal @db.Decimal(9,2) @map("sales_price")
+  packsAsPack Pack[]  @relation("PackToProduct_pack")
+  packsAsProduct Pack[] @relation("PackToProduct_product")
+
+  @@map("products")
+}
+
+model Pack {
+  id         BigInt  @id @default(autoincrement())
+  packId     BigInt  @map("pack_id")
+  productId  BigInt  @map("product_id")
+  qty        BigInt
+  pack       Product @relation("PackToProduct_pack", fields: [packId], references: [code])
+  product    Product @relation("PackToProduct_product", fields: [productId], references: [code])
+
+  @@map("packs")
+}

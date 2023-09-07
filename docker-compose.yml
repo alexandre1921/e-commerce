@@ -1,0 +1,56 @@
+version: "3.1"
+services:
+  mysql-db:
+    container_name: mysql-db
+    image: mysql:8.1.0
+    environment:
+      MYSQL_DATABASE: 'e-commerce-db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    networks:
+      - e-commerce-network
+
+  node-backend:
+    container_name: node-backend
+    depends_on:
+      - mysql-db
+    image: node:18.17.1-alpine3.18
+    user: "node"
+    working_dir: /home/node/node-backend
+    volumes:
+      - ./node-backend:/home/node/node-backend
+    ports:
+      - "4000:4000"
+    command: npm run dev
+    networks:
+      - e-commerce-network
+    expose:
+      - "4000"
+    env_file:
+      - ./node-backend/.env
+
+  node-front-end-web:
+    container_name: node-front-end-web
+    depends_on:
+      - node-backend
+    image: node:18.17.1-alpine3.18
+    user: "node"
+    working_dir: /home/node/node-front-end-web
+    volumes:
+      - ./node-front-end-web:/home/node/node-front-end-web
+    ports:
+      - "5173:5173"
+    command: npm run dev
+    networks:
+      - e-commerce-network
+    expose:
+      - "5173"
+
+networks:
+  e-commerce-network:
+    driver: bridge

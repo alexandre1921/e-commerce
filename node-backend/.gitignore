@@ -1,0 +1,18 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+.vscode/*
+
+build
+
+yarn-error.log
+
+/src/seeds/*
+!.gitkeep
+
+.env.production

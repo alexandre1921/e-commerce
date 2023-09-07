@@ -33,19 +33,19 @@ To run this application, you'll need:
 ### Install the project dependencies in each folder:
 
 ```bash
-$ npm i
+npm i
 ```
 
 ### Setup your env
 Create an env file for backend
 - Create an env file and complete the correct configuration for each field, tip you can use the .env.example
 ```bash
-      $ cp .env.example .env
+cp .env.example .env
 ```
 
 ### Finally, run the application
 ```bash
-$ npm run dev
+npm run dev
 ```
 
 ### Success 🚀. The app is running in 0.0.0.0:5173.

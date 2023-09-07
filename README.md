@@ -35,23 +35,23 @@ Without docker:
 
 ### Clone this repository using this command
 ```bash
-$ git clone https://github.com/alexandre1921/e-commerce
+git clone https://github.com/alexandre1921/e-commerce
 ```
 
 ### Setup your env
 Create an env file for backend
 - enter on backend folder with
 ```bash
-      $ cd backend
+cd backend
 ```
 - create an env file, tip you can use the .env.example
 ```bash
-      $ cp .env.example .env
+cp .env.example .env
 ```
 
 ### Finally, run your app with docker compose on project's root folder
 ```bash
-$ docker compose --env-file=./backend-node/.env up
+docker compose --env-file=./backend-node/.env up
 ```
 
 ### Success 🚀. The app is running.

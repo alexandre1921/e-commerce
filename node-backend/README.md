@@ -29,17 +29,17 @@ To run this application, you'll need:
 Create an env file for backend
 - Create an env file and complete the correct configuration for each field, tip you can use the .env.example
 ```bash
-      $ cp .env.example .env
+cp .env.example .env
 ```
 
 ### Finally, run the application
 ```bash
-      $ npm run dev
+npm run dev
 ```
 
 ### Success 🚀. The app is running.
 ```bash
-$ npm run dev
+npm run dev
 
 > e-commerce-backend@1.0.0 startup
 > npm i && npm run db-startup

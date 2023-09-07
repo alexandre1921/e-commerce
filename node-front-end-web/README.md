@@ -1,5 +1,3 @@
-# React + TypeScript + Vite
-
 <h2 align="center">
   E-commerce-front-end-web
 </h2>

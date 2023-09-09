@@ -560,6 +560,8 @@ type Product {
   code: BigInt!
   costPrice: Decimal!
   name: String!
+  packsAsPack(cursor: PackWhereUniqueInput, distinct: [PackScalarFieldEnum!], orderBy: [PackOrderByWithRelationInput!], skip: Int, take: Int, where: PackWhereInput): [Pack!]!
+  packsAsProduct(cursor: PackWhereUniqueInput, distinct: [PackScalarFieldEnum!], orderBy: [PackOrderByWithRelationInput!], skip: Int, take: Int, where: PackWhereInput): [Pack!]!
   salesPrice: Decimal!
 }
 

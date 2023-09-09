@@ -1,1 +1,2 @@
-export { FileUpload } from "./FileUpload";
+export { FileUpload } from './FileUpload';
+export { ButtonWithLoader } from './ButtonWithLoader';

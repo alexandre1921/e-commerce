@@ -1,4 +1,4 @@
 import { NonEmptyArray } from 'type-graphql';
-import { crudResolvers } from '../generated/type-graphql';
+import { crudResolvers, ProductRelationsResolver } from '../generated/type-graphql';
 
-export const resolvers: NonEmptyArray<Function> = crudResolvers;
+export const resolvers: NonEmptyArray<Function> = [...crudResolvers, ProductRelationsResolver];
